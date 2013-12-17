@@ -1,25 +1,34 @@
+import javax.swing.JOptionPane;
+
 
 public class ListaAutReferenciada  extends Lista implements Imprimivel {
 	
 	private static class Celula{ 
-		Object item; Celula prox ; 
+		Object item; 
+		Celula prox ; 
 	}	
-	private Celula primeiro , ultimo , pos;	
+	
+	private Celula primeiro, ultimo, pos;	
 	
 	public ListaAutReferenciada(){ // Cria uma Lista vazia
 		
-		this.primeiro = new Celula() ; 
+		this.primeiro = new Celula(); 
 		this.pos = this.primeiro;
+		this.ultimo = this.primeiro;
 		this.primeiro.prox = null ;
 	}
 	
 	public void imprime(){//implementação da interface Imprimivel
 		Celula aux = this.primeiro.prox;
+		String str = "Valores armazenados na lista: \n{";
+		
 		while (aux != null){
-			System.out.println (aux.item.toString()) ;
-			aux = aux.prox ; 
+			str += aux.item.toString();
+			aux = aux.prox;			
+			if(aux != null) str += ", ";
 		}
 		
+		JOptionPane.showMessageDialog(null, str + "}");	
 	}
 	@Override
 	public void inserir(Object x) {
@@ -30,9 +39,10 @@ public class ListaAutReferenciada  extends Lista implements Imprimivel {
 	}
 	@Override
 	public Object remover(Object chave) {
-		if (this.vazia() || (chave == null ) )
+		if (this.vazia() || (chave == null))
 			return null;
 		Celula aux = this . primeiro;
+		
 		while(aux.prox!=null && !aux.prox.item.equals(chave))
 			aux = aux.prox;
 		if (aux.prox == null )
@@ -44,6 +54,7 @@ public class ListaAutReferenciada  extends Lista implements Imprimivel {
 		
 		if (aux.prox == null) 
 			this.ultimo = aux; 
+		
 		return item;
 	}
 	public boolean vazia() {
@@ -62,9 +73,11 @@ public class ListaAutReferenciada  extends Lista implements Imprimivel {
 	public Object retiraPrimeiro(){
 		if (this.vazia()) 
 			return null;
+		
 		Celula aux = this.primeiro ; Celula q = aux.prox;
 		Object item = q. item; aux.prox = q.prox;
-		if (aux.prox == null )
+		
+		if (aux.prox == null)
 			this.ultimo = aux; 
 		return item;
 	}

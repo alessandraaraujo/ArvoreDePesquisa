@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 
 public class ListaArranjo extends Lista implements Imprimivel {
 	
@@ -10,7 +12,7 @@ public class ListaArranjo extends Lista implements Imprimivel {
 		this.primeiro = 0;
 		this.ultimo = this.primeiro;
 	}
-	
+	@Override
 	public boolean vazia(){		
 		return (this.primeiro == this.ultimo);
 	}
@@ -67,20 +69,28 @@ public class ListaArranjo extends Lista implements Imprimivel {
 		else
 			return this.item[this.pos];
 	}
+	@Override
 	public Object retiraPrimeiro()
 	{
 		if (this.vazia()) 
 			return null;
-		Object item = this.item[0] ;
+		Object item = this.item[0];
 		this.ultimo -= 1;
-		for ( int aux = 0; aux < this . ultimo ; aux++)
-		this . item[aux] = this . item[aux + 1] ;
+		for (int aux = 0; aux < this.ultimo; aux++)
+			this.item[aux] = this . item[aux + 1] ;
 		return item;
-		}
+	}
 	public void imprime()
 	{
-		for(int i = this.primeiro; i < this.ultimo; i++)
-			System.out.println(this.item[i].toString());
+		String str = "Valores armazenados na lista: \n{";
 		
+		for(int i = this.primeiro; i < this.ultimo; i++)
+		{
+			str += this.item[i].toString();
+			
+			if(i != this.ultimo - 1)
+				str += ", ";
+		}	
+		JOptionPane.showMessageDialog(null, str + "}");	
 	}
 }
