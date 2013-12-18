@@ -1,7 +1,7 @@
 
 public abstract class EstruturaDeDados {
 	
-	public abstract void inserir(Object dado);
-	public abstract Object remover(Object dado);
-	public abstract Object pesquisar(Object dado);	
+	abstract void inserir(Object dado);
+	abstract Object remover(Object dado);
+	abstract Object pesquisar(Object dado);	
 }

@@ -1,12 +1,7 @@
 import javax.swing.JOptionPane;
 
 
-public class ListaAutReferenciada  extends Lista implements Imprimivel {
-	
-	private static class Celula{ 
-		Object item; 
-		Celula prox ; 
-	}	
+public class ListaAutReferenciada  extends Lista implements iImprimivel {
 	
 	private Celula primeiro, ultimo, pos;	
 	
@@ -18,7 +13,7 @@ public class ListaAutReferenciada  extends Lista implements Imprimivel {
 		this.primeiro.prox = null ;
 	}
 	
-	public void imprime(){//implementação da interface Imprimivel
+	public void imprime(){ //implementação da interface Imprimivel
 		Celula aux = this.primeiro.prox;
 		String str = "Valores armazenados na lista: \n{";
 		

@@ -1,9 +1,7 @@
 
-public class ArvoreSBB extends Arvore implements Imprimivel {
+public class ArvoreSBB extends Arvore implements iImprimivel {
 	
-	public class NoSBB extends No{
-		byte incE, incD;
-	}
+	
 	/**
 	 * >> Atributos da classe ArvoreSBB
 	 * 
@@ -60,5 +58,11 @@ public class ArvoreSBB extends Arvore implements Imprimivel {
 	 * private Object pesquisar(Object reg, NoSBB p)
 	 * private No inserir ( Obejct reg, NoSBB pai, NoSBB filho, boolean filhoEsq)
      * private No remover (Object reg , NoSBB ap) 
+     * 
+     * 
+     * LOL
 	 */
+	
+	
+	
 }

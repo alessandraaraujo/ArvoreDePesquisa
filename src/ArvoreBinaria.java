@@ -1,9 +1,9 @@
 import javax.swing.JOptionPane;
 
 
-public class ArvoreBinaria extends Arvore implements Imprimivel{
+public class ArvoreBinaria extends Arvore implements iImprimivel{
 	
-	private No raiz ;
+	private No raiz;
 	
 	public ArvoreBinaria () {
 		this.raiz = null ;
@@ -14,7 +14,7 @@ public class ArvoreBinaria extends Arvore implements Imprimivel{
 	}
 	@Override
 	public Object remover(Object dado) {
-		 this.raiz = this.retira (dado, this.raiz);
+		 this.raiz = this.remover (dado, this.raiz);
 		 return dado;		 
 	}
 	@Override
@@ -68,7 +68,7 @@ public class ArvoreBinaria extends Arvore implements Imprimivel{
 		}
 		return r ;
 	}
-	private No retira (Object reg , No p) {
+	private No remover (Object reg , No p) {
 		if (p == null )
 			System.out . println ( "Erro : Registro nao encontrado" ) ;		
 		else{
@@ -77,9 +77,9 @@ public class ArvoreBinaria extends Arvore implements Imprimivel{
 			int aux2 = Integer.parseInt(p.reg.toString());
 			
 			if (aux1 < aux2)
-				p.esq = retira ( reg, p.esq) ;
+				p.esq = remover ( reg, p.esq) ;
 			else if (aux1 > aux2)
-				p. dir = retira ( reg , p. dir ) ;
+				p. dir = remover ( reg , p. dir ) ;
 			else {
 				if (p. dir == null ) p = p.esq;
 				else if (p.esq == null ) p = p. dir ;
