@@ -5,7 +5,7 @@ public class ListaAutReferenciada  extends Lista implements iImprimivel {
 	
 	private Celula primeiro, ultimo, pos;	
 	
-	public ListaAutReferenciada(){ // Cria uma Lista vazia
+	public ListaAutReferenciada(){ //Cria uma Lista vazia
 		
 		this.primeiro = new Celula(); 
 		this.pos = this.primeiro;
@@ -41,7 +41,7 @@ public class ListaAutReferenciada  extends Lista implements iImprimivel {
 		while(aux.prox!=null && !aux.prox.item.equals(chave))
 			aux = aux.prox;
 		if (aux.prox == null )
-			return null ; // não encontrada
+			return null ; //não encontrada
 		
 		Celula q = aux.prox;
 		

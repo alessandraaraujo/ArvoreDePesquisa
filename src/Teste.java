@@ -10,15 +10,27 @@ public class Teste {
 	 */
 	public static void main(String[] args) {
 	
+		Object pes;
+		int dado = 1;
+		
 		ListaArranjo list = new ListaArranjo(45);
-		list.inserir(122);
-		list.inserir(234);
+		
+		while(true)
+		{
+			dado = Integer.parseInt(JOptionPane.showInputDialog("Informe uma valor a ser inserido na lista (digite 0 p/ sair): "));
+			if(dado == 0)
+				break;
+			list.inserir(dado);
+		}
+		
 		list.imprime();
 		
 		ListaAutReferenciada list1 = new ListaAutReferenciada();
 		
 		list1.inserir(123);
 		list1.inserir(342);
+		list1.inserir(45);
+		list1.inserir(346);
 		list1.imprime();
 		
 		ArvoreBinaria bst = new ArvoreBinaria();
@@ -26,14 +38,24 @@ public class Teste {
 		bst.inserir(1903);
 		bst.inserir(22);
 		bst.inserir(512);
+		bst.inserir(345);
+		bst.inserir(1235);
 		
 		bst.imprime();
 		
-		JOptionPane.showMessageDialog(null,bst.remover(22));
+		pes = Integer.parseInt(JOptionPane.showInputDialog("Informe uma valor a ser removido da arvore binaria: "));
+		
+		if(bst.remover(pes) != null)
+			JOptionPane.showMessageDialog(null,"Remvovendo " + bst.remover(pes));
+		else
+			JOptionPane.showMessageDialog(null, "Erro: valor nao existe na arvore.\n");
+		
 		
 		bst.imprime();
 		
-		Object aux = bst.pesquisar(512);
+		pes = Integer.parseInt(JOptionPane.showInputDialog("Informe uma valor a ser pesquisado na arvore binaria: "));
+		
+		Object aux = bst.pesquisar(pes);
 		
 		if(aux != null)
 			JOptionPane.showMessageDialog(null, "Pesquisa realizada com sucesso.\n" + "Valor pesquisado: " + aux);

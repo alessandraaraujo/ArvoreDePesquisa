@@ -6,7 +6,7 @@ public abstract class Arvore extends EstruturaDeDados {
 	public void central(No p){		
 		if(p != null){
 			central(p.esq);
-			msg += p.reg.toString() + "\n";
+			msg += "*" + p.reg.toString() + "\n";
 			central(p.dir);
 		}		
 	}

@@ -77,12 +77,12 @@ public class ArvoreBinaria extends Arvore implements iImprimivel{
 			int aux2 = Integer.parseInt(p.reg.toString());
 			
 			if (aux1 < aux2)
-				p.esq = remover ( reg, p.esq) ;
+				p.esq = remover(reg, p.esq) ;
 			else if (aux1 > aux2)
-				p. dir = remover ( reg , p. dir ) ;
+				p.dir = remover(reg , p. dir ) ;
 			else {
-				if (p. dir == null ) p = p.esq;
-				else if (p.esq == null ) p = p. dir ;
+				if (p.dir == null) p = p.esq;
+				else if (p.esq == null ) p = p.dir ;
 				else p.esq = antecessor (p, p.esq) ;
 			}			
 		}
