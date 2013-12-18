@@ -45,10 +45,8 @@ public class Teste {
 		
 		pes = Integer.parseInt(JOptionPane.showInputDialog("Informe uma valor a ser removido da arvore binaria: "));
 		
-		if(bst.remover(pes) != null)
-			JOptionPane.showMessageDialog(null,"Remvovendo " + bst.remover(pes));
-		else
-			JOptionPane.showMessageDialog(null, "Erro: valor nao existe na arvore.\n");
+
+		JOptionPane.showMessageDialog(null,"Remvovendo " + bst.remover(pes));
 		
 		
 		bst.imprime();
