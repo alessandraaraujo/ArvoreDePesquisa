@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 
 
-public class ListaAutReferenciada  extends Lista implements iImprimivel {
+public class ListaAutReferenciada  extends Lista{
 	
 	private CelulaNo primeiro, ultimo, pos;	
 	

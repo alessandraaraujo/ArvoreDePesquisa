@@ -4,7 +4,7 @@ public class Teste {
 	    
 	public static void main(String[] args) {		
 		
-		EstruturaDeDados estrutura[] = new EstruturaDeDados[5];
+		EstruturaDeDados estrutura[] = new EstruturaDeDados[3];
 		
 		Object pes;
 		
