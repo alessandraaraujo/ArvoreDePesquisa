@@ -1,4 +1,4 @@
 
-public class NoSBB extends No{
+public class NoSBB extends CelulaNo{
 		byte incE, incD;
 }

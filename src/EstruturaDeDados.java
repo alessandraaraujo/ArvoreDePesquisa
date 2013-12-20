@@ -1,5 +1,5 @@
 
-public abstract class EstruturaDeDados {
+public abstract class EstruturaDeDados implements iImprimivel{
 	
 	abstract void inserir(Object dado);
 	abstract Object remover(Object dado);

@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 
 
-public class ListaArranjo extends Lista implements iImprimivel {
+public class ListaArranjo extends Lista{
 	
 	private Object item[];
 	private int primeiro, ultimo, pos;

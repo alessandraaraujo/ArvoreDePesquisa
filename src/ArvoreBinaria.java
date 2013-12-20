@@ -1,9 +1,9 @@
 import javax.swing.JOptionPane;
 
 
-public class ArvoreBinaria extends Arvore implements iImprimivel{
+public class ArvoreBinaria extends Arvore{
 	
-	private No raiz;
+	private CelulaNo raiz;
 	
 	public ArvoreBinaria () {
 		this.raiz = null ;
@@ -22,32 +22,32 @@ public class ArvoreBinaria extends Arvore implements iImprimivel{
 		// TODO Auto-generated method stub
 		return this.pesquisar(dado, this.raiz );
 	}	
-	private Object pesquisar(Object reg, No p) {
+	private Object pesquisar(Object reg, CelulaNo p) {
 		if (p == null ) 
 			return null; // Registro não encontrado
 		
 		int aux1 = Integer.parseInt(reg.toString());
-		int aux2 = Integer.parseInt(p.reg.toString());
+		int aux2 = Integer.parseInt(p.item.toString());
 		
 		if(aux1 < aux2)
 			return pesquisar (reg , p.esq) ;
 		else if (aux1 > aux2)
-			return pesquisar ( reg , p. dir ) ;
+			return pesquisar ( reg , p.dir ) ;
 		else 
-			return p.reg;
+			return p.item;
 	}
-	private No inserir (Object reg , No p) {
+	private CelulaNo inserir (Object reg, CelulaNo p) {
 		
 		if (p == null ) {
-			p = new No (); 
-			p.reg = reg;
+			p = new CelulaNo (); 
+			p.item = reg;
 			p.esq = null ; 
 			p.dir = null ;
 		}		
 		else{
 			
 			int aux1 = Integer.parseInt(reg.toString());
-			int aux2 = Integer.parseInt(p.reg.toString());
+			int aux2 = Integer.parseInt(p.item.toString());
 			
 			if (aux1 < aux2)
 				p.esq = inserir (reg , p.esq);
@@ -59,22 +59,22 @@ public class ArvoreBinaria extends Arvore implements iImprimivel{
 		return p;		
 	}
 	@Override
-	protected No antecessor (No q, No r ) {
+	protected CelulaNo antecessor (CelulaNo q, CelulaNo r ) {
 	if ( r.dir != null ) 
 		r.dir = antecessor (q, r.dir );
 		else { 
-			q.reg = r.reg;
+			q.item = r.item;
 			r = r.esq; 
 		}
 		return r ;
 	}
-	private No remover (Object reg , No p) {
+	private CelulaNo remover (Object reg , CelulaNo p) {
 		if (p == null )
 			System.out . println ( "Erro : Registro nao encontrado" ) ;		
 		else{
 			
 			int aux1 = Integer.parseInt(reg.toString());
-			int aux2 = Integer.parseInt(p.reg.toString());
+			int aux2 = Integer.parseInt(p.item.toString());
 			
 			if (aux1 < aux2)
 				p.esq = remover(reg, p.esq) ;

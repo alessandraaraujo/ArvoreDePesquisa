@@ -1,5 +1,5 @@
 
-public class ArvoreSBB extends Arvore implements iImprimivel {
+public class ArvoreSBB extends Arvore{
 	
 	
 	/**
@@ -39,7 +39,7 @@ public class ArvoreSBB extends Arvore implements iImprimivel {
 		
 	}
 	@Override
-	protected  No antecessor (No q, No r ){
+	protected  CelulaNo antecessor (CelulaNo q, CelulaNo r ){
 		// TODO Auto-generated method stub
 		return null;
 	}

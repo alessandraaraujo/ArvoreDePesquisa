@@ -3,12 +3,12 @@
 public abstract class Arvore extends EstruturaDeDados {
 	protected static String msg = "Valores armazenados na arvore: \n"; 	
 	
-	public void central(No p){		
+	public void central(CelulaNo p){		
 		if(p != null){
 			central(p.esq);
-			msg += "*" + p.reg.toString() + "\n";
+			msg += "*" + p.item.toString() + "\n";
 			central(p.dir);
 		}		
 	}
-	protected abstract No antecessor(No q, No r);
+	protected abstract CelulaNo antecessor(CelulaNo q, CelulaNo r);
 }

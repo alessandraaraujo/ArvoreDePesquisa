@@ -3,18 +3,18 @@ import javax.swing.JOptionPane;
 
 public class ListaAutReferenciada  extends Lista implements iImprimivel {
 	
-	private Celula primeiro, ultimo, pos;	
+	private CelulaNo primeiro, ultimo, pos;	
 	
 	public ListaAutReferenciada(){ //Cria uma Lista vazia
 		
-		this.primeiro = new Celula(); 
+		this.primeiro = new CelulaNo(); 
 		this.pos = this.primeiro;
 		this.ultimo = this.primeiro;
 		this.primeiro.prox = null ;
 	}
 	
 	public void imprime(){ //implementação da interface Imprimivel
-		Celula aux = this.primeiro.prox;
+		CelulaNo aux = this.primeiro.prox;
 		String str = "Valores armazenados na lista: \n{";
 		
 		while (aux != null){
@@ -27,7 +27,7 @@ public class ListaAutReferenciada  extends Lista implements iImprimivel {
 	}
 	@Override
 	public void inserir(Object x) {
-		this.ultimo.prox = new Celula () ;
+		this.ultimo.prox = new CelulaNo () ;
 		this.ultimo = this.ultimo.prox;
 		this.ultimo.item = x ; 
 		this.ultimo.prox = null ;
@@ -36,14 +36,14 @@ public class ListaAutReferenciada  extends Lista implements iImprimivel {
 	public Object remover(Object chave) {
 		if (this.vazia() || (chave == null))
 			return null;
-		Celula aux = this . primeiro;
+		CelulaNo aux = this . primeiro;
 		
 		while(aux.prox!=null && !aux.prox.item.equals(chave))
 			aux = aux.prox;
 		if (aux.prox == null )
 			return null ; //não encontrada
 		
-		Celula q = aux.prox;
+		CelulaNo q = aux.prox;
 		
 		Object item = q. item; aux.prox = q.prox;
 		
@@ -58,7 +58,7 @@ public class ListaAutReferenciada  extends Lista implements iImprimivel {
 	@Override
 	public Object pesquisar(Object chave) {
 		if ( this.vazia() || chave == null ) return null ;
-		Celula aux = this . primeiro;
+		CelulaNo aux = this . primeiro;
 		while (aux.prox != null ) {
 			if (aux.prox.item.equals(chave)) return aux.prox. item;
 				aux = aux.prox;
@@ -69,7 +69,7 @@ public class ListaAutReferenciada  extends Lista implements iImprimivel {
 		if (this.vazia()) 
 			return null;
 		
-		Celula aux = this.primeiro ; Celula q = aux.prox;
+		CelulaNo aux = this.primeiro ; CelulaNo q = aux.prox;
 		Object item = q. item; aux.prox = q.prox;
 		
 		if (aux.prox == null)

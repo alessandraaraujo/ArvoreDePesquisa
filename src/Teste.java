@@ -1,64 +1,57 @@
 import javax.swing.JOptionPane;
 
-
-
-
 public class Teste {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-	
+	    
+	public static void main(String[] args) {		
+		
+		EstruturaDeDados estrutura[] = new EstruturaDeDados[5];
+		
 		Object pes;
-		int dado = 1;
 		
-		ListaArranjo list = new ListaArranjo(45);
+		int opcao = Integer.parseInt(JOptionPane.showInputDialog("Selecione a estrutura a ser criada:\n1- Avore binária\n2- Lista por arranjo\n2- Lista autoreferenciada"));
 		
-		while(true)
-		{
-			dado = Integer.parseInt(JOptionPane.showInputDialog("Informe uma valor a ser inserido na lista (digite 0 p/ sair): "));
-			if(dado == 0)
-				break;
-			list.inserir(dado);
+		switch (opcao) {
+		case 1:
+			estrutura[0] = new ArvoreBinaria();
+			JOptionPane.showConfirmDialog(null, "Deseja inserir itens na estrurura?");
+			while(true){
+				pes = Integer.parseInt(JOptionPane.showInputDialog("Forneca o item a ser inserido. Digite 0 para sair"));
+				if((int)pes == 0)
+					break;
+				else
+					estrutura[0].inserir(pes);
+			}
+			JOptionPane.showConfirmDialog(null, "Deseja exibir os dados inseridos");
+			estrutura[0].imprime();
+			break;
+		case 2:
+			estrutura[0] = new ListaArranjo(5);
+			JOptionPane.showConfirmDialog(null, "Deseja inserir itens na estrurura?");
+			while(true){
+				pes = Integer.parseInt(JOptionPane.showInputDialog("Forneca o item a ser inserido. Digite 0 para sair"));
+				if((int)pes == 0)
+					break;
+				else
+					estrutura[0].inserir(pes);
+			}
+			JOptionPane.showConfirmDialog(null, "Deseja exibir os dados inseridos");
+			estrutura[0].imprime();
+			break;
+		case 3:
+			estrutura[0] = new ListaAutReferenciada();
+			JOptionPane.showConfirmDialog(null, "Deseja inserir itens na estrurura?");
+			while(true){
+				pes = Integer.parseInt(JOptionPane.showInputDialog("Forneca o item a ser inserido. Digite 0 para sair"));
+				if((int)pes == 0)
+					break;
+				else
+					estrutura[0].inserir(pes);
+			}
+			JOptionPane.showConfirmDialog(null, "Deseja exibir os dados inseridos");
+			estrutura[0].imprime();
+			break;
+		default:
+			break;
 		}
-		
-		list.imprime();
-		
-		ListaAutReferenciada list1 = new ListaAutReferenciada();
-		
-		list1.inserir(123);
-		list1.inserir(342);
-		list1.inserir(45);
-		list1.inserir(346);
-		list1.imprime();
-		
-		ArvoreBinaria bst = new ArvoreBinaria();
-		
-		bst.inserir(1903);
-		bst.inserir(22);
-		bst.inserir(512);
-		bst.inserir(345);
-		bst.inserir(1235);
-		
-		bst.imprime();
-		
-		pes = Integer.parseInt(JOptionPane.showInputDialog("Informe uma valor a ser removido da arvore binaria: "));
-		
-
-		JOptionPane.showMessageDialog(null,"Remvovendo " + bst.remover(pes));
-		
-		
-		bst.imprime();
-		
-		pes = Integer.parseInt(JOptionPane.showInputDialog("Informe uma valor a ser pesquisado na arvore binaria: "));
-		
-		Object aux = bst.pesquisar(pes);
-		
-		if(aux != null)
-			JOptionPane.showMessageDialog(null, "Pesquisa realizada com sucesso.\n" + "Valor pesquisado: " + aux);
-		else
-			JOptionPane.showMessageDialog(null, "Pesquisa nao teve exito.\n");
 	}
-
 }
